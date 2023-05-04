@@ -1,9 +1,19 @@
-import './App.css';
+import './App.scss';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SurveyPage from './pages/SurveyPage/SurveyPage';
+import WorkoutsPage from './pages/WorkoutsPage/WorkoutsPage'
+
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element=<SurveyPage/> />
+    <Route path="/workouts" element=<WorkoutsPage/> />
+    </Routes>
+    
+    </BrowserRouter>
+    
   );
 }
 
