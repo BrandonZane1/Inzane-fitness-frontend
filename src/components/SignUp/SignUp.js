@@ -3,6 +3,7 @@ import './SignUp.scss';
 function SignUp() {
   return (
     <div>
+    Hi
     </div>
   );
 }
