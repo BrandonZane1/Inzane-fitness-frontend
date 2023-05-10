@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./colors" as *;
+@use "./typography" as *;
 
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -24,4 +25,13 @@
     margin: 0;
     font-weight: 100;
     
+}
+
+@mixin mOther {
+  font-family: Storm Gust, sans-serif;
+}
+
+@mixin mButtons {
+  font-size: 0.8rem;
+  font-weight: 600;
 }
