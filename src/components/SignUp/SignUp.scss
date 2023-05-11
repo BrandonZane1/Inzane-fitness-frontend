@@ -1,0 +1,55 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.question-1 {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  justify-content: space-between;
+  text-align: center;
+  background-color: $page-background;
+  color: $primary-text;
+
+  &__header {
+    margin-top: 20%;
+    @include mSubHeader;
+  }
+
+  &__subheader {
+    @include mComment;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    gap: 15rem;
+    
+  }
+
+  &__input {
+    background-color: $page-background;
+    border: $interactive solid 1px;
+    border-radius: 1rem;
+    text-align: center;
+    width: 70%;
+    padding: 0.5rem;
+    margin: 0 auto;
+    @include mSubHeader;
+    cursor: pointer;
+
+    &:focus {
+        border: $interactive solid 1px;
+        color: $primary-text;
+    }
+  }
+
+  &__submit {
+    @include mButtons;
+    @include mNextButton;
+    
+
+  
+  }
+}
