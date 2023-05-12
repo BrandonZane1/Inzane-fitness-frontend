@@ -5,6 +5,7 @@ import SignUp from "../../components/SignUp/SignUp";
 import SignUp2 from "../../components/SignUp2/SignUp2";
 import SignUp3 from "../../components/SignUp3/SignUp3";
 import SignUp4 from "../../components/SignUp4/SignUp4";
+import WorkoutsPage from "../WorkoutsPage/WorkoutsPage";
 
 function SurveyPage() {
   return (
@@ -15,6 +16,7 @@ function SurveyPage() {
         <Route path="SignUp/SignUp2" element={<SignUp2 />} />
         <Route path="SignUp/SignUp2/SignUp3" element={<SignUp3 />} />
         <Route path="SignUp/SignUp2/SignUp3/SignUp4" element={<SignUp4 />} />
+        <Route path="/Workouts" element={<WorkoutsPage/>}/>
       </Routes>
     </div>
   );

@@ -4,6 +4,9 @@ import { useState } from "react";
 import "./SignUp4.scss";
 
 function SignUp4() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [displayTime, setDisplayTime] = useState(3000); // 3000 milliseconds = 3 seconds
+
   const [checkboxValues, setCheckboxValues] = useState({
     checkbox1: false,
     checkbox2: false,
@@ -37,6 +40,7 @@ function SignUp4() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Checkbox values:", checkboxValues);
+    setIsLoading(true);
 
     const formData = {
       checkbox1: checkboxValues.checkbox1,
@@ -58,84 +62,92 @@ function SignUp4() {
         console.error("Failed to post form data", error);
         // Handle error
       });
+
+    setTimeout(() => {
+      setIsLoading(false);
+      // Do something else after loading is complete, e.g., transition to the next page
+    }, displayTime);
   };
   return (
     <div>
-      <h2>What equipment do you have access to?</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Full Gym
-          <input
-            type="checkbox"
-            name="checkbox1"
-            checked={checkboxValues.checkbox1}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+      {isLoading ? (
+        <div>Unleash the BEAST</div>
+      ) : (
+        <div>
+          <h2>What equipment do you have access to?</h2>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Full Gym
+              <input
+                type="checkbox"
+                name="checkbox1"
+                checked={checkboxValues.checkbox1}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-        <label>
-          Barbells
-          <input
-            type="checkbox"
-            name="checkbox2"
-            checked={checkboxValues.checkbox2}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+            <label>
+              Barbells
+              <input
+                type="checkbox"
+                name="checkbox2"
+                checked={checkboxValues.checkbox2}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-        <label>
-          Dumbbells
-          <input
-            type="checkbox"
-            name="checkbox3"
-            checked={checkboxValues.checkbox3}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+            <label>
+              Dumbbells
+              <input
+                type="checkbox"
+                name="checkbox3"
+                checked={checkboxValues.checkbox3}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-        <label>
-          KettleBells
-          <input
-            type="checkbox"
-            name="checkbox4"
-            checked={checkboxValues.checkbox4}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+            <label>
+              KettleBells
+              <input
+                type="checkbox"
+                name="checkbox4"
+                checked={checkboxValues.checkbox4}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-        <label>
-          Machines
-          <input
-            type="checkbox"
-            name="checkbox5"
-            checked={checkboxValues.checkbox5}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+            <label>
+              Machines
+              <input
+                type="checkbox"
+                name="checkbox5"
+                checked={checkboxValues.checkbox5}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-        <label>
-          No Equipment
-          <input
-            type="checkbox"
-            name="checkbox6"
-            checked={checkboxValues.checkbox6}
-            onChange={handleCheckboxChange}
-          />
-        </label>
-        <br />
+            <label>
+              No Equipment
+              <input
+                type="checkbox"
+                name="checkbox6"
+                checked={checkboxValues.checkbox6}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+            <br />
 
-    
-
-  
-        <Link>
-          <button type="submit">Submit</button>
-        </Link>
-      </form>
+            <Link to="/Workouts">
+              <button type="submit">Submit</button>
+            </Link>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

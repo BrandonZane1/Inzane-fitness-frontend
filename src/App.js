@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/*" element=<SurveyPage /> />
-          <Route path="/workouts/*" element=<WorkoutsPage /> />
+          <Route path="/Workouts" element=<WorkoutsPage /> />
         </Routes>
       </BrowserRouter>
       <Footer />
