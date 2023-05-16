@@ -9,6 +9,7 @@
     
     &__title {
         @include mNextButton;
+        @include mButtons;
     }
 }
 

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "./Day.scss";
 
-function Day6( {quadsExercises, hamstringsExercises, calvesExercises, weekSchema}) {
+function Day6({
+  quadsExercises,
+  hamstringsExercises,
+  calvesExercises,
+  weekSchema,
+}) {
   const [isDay6Visible, setIsDay6Visible] = useState(false);
 
   const toggleDay6Visibility = () => {
@@ -10,10 +15,9 @@ function Day6( {quadsExercises, hamstringsExercises, calvesExercises, weekSchema
 
   return (
     <article className="day">
-      
-        <button className="day__title" onClick={toggleDay6Visibility}>
-          {isDay6Visible ? "Hide" : "Day 6"}
-        </button>
+      <button className="day__title" onClick={toggleDay6Visibility}>
+        {isDay6Visible ? "Hide" : "Day 6"}
+      </button>
 
       {isDay6Visible && (
         <div>

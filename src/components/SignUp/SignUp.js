@@ -1,25 +1,32 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import "./SignUp.scss";
 
 function SignUp() {
-
-  const [firstName, setFirstName] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post('/api/formdata', { firstName });
+    if (firstName.trim() === "") {
+      setError("Please enter your first name");
+      return;
+    }
 
-      console.log('Form data saved successfully.');
+    try {
+      const response = await axios.post("http://localhost:5000/api/form1", { firstName });
+
+      console.log("Form data saved successfully.");
       // Perform any necessary actions after successful form submission
+      navigate("/SignUp2");
     } catch (error) {
-      console.error('Error saving form data.');
+      console.error("Error saving form data.");
       // Handle error case if form data failed to save
     }
-  }
+  };
   return (
     <div className="question-1">
       <div className="question-1__box">
@@ -35,9 +42,11 @@ function SignUp() {
           placeholder="Enter your first name"
           onChange={(e) => setFirstName(e.target.value)}
         ></input>
-        <Link to="SignUp2">
-          <button type="submit" className="question-1__submit">Next</button>
-        </Link>
+        {error && <p className="question-1__error">{error}</p>}
+
+        <button type="submit" className="question-1__submit">
+          Next
+        </button>
       </form>
     </div>
   );

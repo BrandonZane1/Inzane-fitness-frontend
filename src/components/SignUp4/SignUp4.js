@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./SignUp4.scss";
+import { useNavigate } from 'react-router-dom';
 
 function SignUp4() {
   const [isLoading, setIsLoading] = useState(false);
-  const [displayTime, setDisplayTime] = useState(3000); // 3000 milliseconds = 3 seconds
-
+  const [displayTime, setDisplayTime] = useState(4000); // 4000 milliseconds = 4 seconds
+  const navigate = useNavigate();
   const [checkboxValues, setCheckboxValues] = useState({
     checkbox1: false,
     checkbox2: false,
@@ -37,11 +37,21 @@ function SignUp4() {
     });
   };
 
+  useEffect(() => {
+    if (isLoading) {
+      setTimeout(() => {
+        setIsLoading(false);
+        navigate('/Workouts'); // Trigger navigation after displayTime
+      }, displayTime);
+    }
+  }, [isLoading, displayTime, navigate]);
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Checkbox values:", checkboxValues);
     setIsLoading(true);
-
+    
     const formData = {
       checkbox1: checkboxValues.checkbox1,
       checkbox2: checkboxValues.checkbox2,
@@ -53,25 +63,23 @@ function SignUp4() {
     };
 
     axios
-      .post("/api/formdata", formData)
+      .post("http://localhost:5000/api/form3", formData)
       .then(() => {
         console.log("Form data posted successfully");
         // Reset the form if needed
+        setDisplayTime(4000);
+        
       })
       .catch((error) => {
         console.error("Failed to post form data", error);
         // Handle error
-      });
-
-    setTimeout(() => {
-      setIsLoading(false);
-      // Do something else after loading is complete, e.g., transition to the next page
-    }, displayTime);
+      })
+    
   };
   return (
     <div>
       {isLoading ? (
-        <div>Unleash the BEAST</div>
+        <div className="loading">Unleash your inner BEAST</div>
       ) : (
         <div className="question-4">
           <h2 className="question-4__title">
@@ -150,9 +158,9 @@ function SignUp4() {
             </label>
             <br />
 
-            <Link to="/Workouts">
+            
               <button className="question-4__button" type="submit">Submit</button>
-            </Link>
+            
           </form>
         </div>
       )}

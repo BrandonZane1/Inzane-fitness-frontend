@@ -12,6 +12,7 @@
 
   &__title {
     text-align: center;
+    @include mSubHeader;
   }
 
   &__container {

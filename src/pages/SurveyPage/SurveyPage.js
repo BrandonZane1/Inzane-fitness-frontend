@@ -13,9 +13,9 @@ function SurveyPage() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="SignUp/SignUp2" element={<SignUp2 />} />
-        <Route path="SignUp/SignUp2/SignUp3" element={<SignUp3 />} />
-        <Route path="SignUp/SignUp2/SignUp3/SignUp4" element={<SignUp4 />} />
+        <Route path="/SignUp2" element={<SignUp2 />} />
+        <Route path="/SignUp3" element={<SignUp3 />} />
+        <Route path="/SignUp4" element={<SignUp4 />} />
         <Route path="/Workouts" element={<WorkoutsPage/>}/>
       </Routes>
     </div>

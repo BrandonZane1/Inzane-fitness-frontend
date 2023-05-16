@@ -2,39 +2,42 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
+.week-1 {
+  min-height: 85vh;
+  background-color: $page-background;
+}
+
 .day {
-    padding: 5%;
-    background-color: $page-background;
-    color: $primary-text;
-    
-    &__title {
-        @include mSubHeader;
-    }
+  padding: 5%;
+  background-color: $page-background;
+  color: $primary-text;
+  min-height: 100%;
+
+  &__title {
+    @include mSubHeader;
+  }
 }
 
 .card {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 
-    &__name {
-        @include mWorkoutName;
-        width: 100%;
-    }
- &__gif {
-        mix-blend-mode:hard-light;
-        width: 100%;
-    }
-    
-    &__schema {
-        @include mComment;
-        flex: 1;
-        
-    }
+  &__name {
+    @include mWorkoutName;
+    width: 100%;
+  }
+  &__gif {
+    mix-blend-mode: hard-light;
+    width: 100%;
+  }
 
-    &__target {
-        @include mTargetMuscle;
-    }
-    
-   
+  &__schema {
+    @include mComment;
+    flex: 1;
+  }
+
+  &__target {
+    @include mTargetMuscle;
+  }
 }

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import "./SignUp3.scss";
+import { useNavigate } from "react-router-dom";
 
 function SignUp3() {
   const [checkboxValues, setCheckboxValues] = useState({
@@ -14,6 +14,7 @@ function SignUp3() {
     checkbox7: false,
   });
 
+  const navigate = useNavigate();
   const handleCheckboxChange = (event) => {
     const { name } = event.target;
 
@@ -49,10 +50,11 @@ function SignUp3() {
     };
 
     axios
-      .post("/api/formdata", formData)
+      .post("http://localhost:5000/api/form2", formData)
       .then(() => {
         console.log("Form data posted successfully");
         // Reset the form if needed
+        navigate("/SignUp4");
       })
       .catch((error) => {
         console.error("Failed to post form data", error);
@@ -61,7 +63,9 @@ function SignUp3() {
   };
   return (
     <div className="question-3">
-      <h2 className="question-3__title">How many days per week are you willing to workout?</h2>
+      <h2 className="question-3__title">
+        How many days per week are you willing to workout?
+      </h2>
       <form className="question-3__container" onSubmit={handleSubmit}>
         <label className="question-3__label">
           1x a week
@@ -146,11 +150,9 @@ function SignUp3() {
           />
         </label>
         <br />
-        <Link to="SignUp4">
-          <button className="question-3__button" type="submit">
-            Next
-          </button>
-        </Link>
+        <button className="question-3__button" type="submit">
+          Next
+        </button>
       </form>
     </div>
   );

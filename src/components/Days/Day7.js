@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Day.scss";
 
-function Day7( {cardioExercises, weekSchema}) {
+function Day7({ cardioExercises, weekSchema }) {
   const [isDay7Visible, setIsDay7Visible] = useState(false);
 
   const toggleDay7Visibility = () => {
@@ -10,10 +10,9 @@ function Day7( {cardioExercises, weekSchema}) {
 
   return (
     <article className="day">
-      
-        <button className="day__title" onClick={toggleDay7Visibility}>
-          {isDay7Visible ? "Hide" : "Day 7"}
-        </button>
+      <button className="day__title" onClick={toggleDay7Visibility}>
+        {isDay7Visible ? "Hide" : "Day 7"}
+      </button>
 
       {isDay7Visible && (
         <div>
@@ -33,11 +32,11 @@ function Day7( {cardioExercises, weekSchema}) {
                   exercise.target.slice(1)}
               </p>
             </div>
-            ))}
-            </div>
-          )}
-        </article>
-      );
-    }
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
 
 export default Day7;

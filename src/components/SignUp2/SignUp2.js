@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import axios from "axios";
 import { useState } from "react";
 import "./SignUp2.scss";
+import { useNavigate } from 'react-router-dom';
+
 
 function SignUp2() {
   const [checkboxValues, setCheckboxValues] = useState({
@@ -9,7 +9,7 @@ function SignUp2() {
     checkbox2: false,
     checkbox3: false,
   });
-
+const navigate = useNavigate();
   const handleCheckboxChange = (event) => {
     const { name } = event.target;
 
@@ -29,24 +29,26 @@ function SignUp2() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Checkbox values:", checkboxValues);
+    navigate('/SignUp3');
+  }
 
-    const formData = {
-      checkbox1: checkboxValues.checkbox1,
-      checkbox2: checkboxValues.checkbox2,
-      checkbox3: checkboxValues.checkbox3,
-    };
+  //   const formData = {
+  //     checkbox1: checkboxValues.checkbox1,
+  //     checkbox2: checkboxValues.checkbox2,
+  //     checkbox3: checkboxValues.checkbox3,
+  //   };
 
-    axios
-      .post("/api/formdata", formData)
-      .then(() => {
-        console.log("Form data posted successfully");
-        // Reset the form if needed
-      })
-      .catch((error) => {
-        console.error("Failed to post form data", error);
-        // Handle error
-      });
-  };
+  //   axios
+  //     .post("/api/formdata", formData)
+  //     .then(() => {
+  //       console.log("Form data posted successfully");
+  //       // Reset the form if needed
+  //     })
+  //     .catch((error) => {
+  //       console.error("Failed to post form data", error);
+  //       // Handle error
+  //     });
+  // };
   return (
     <div className="question-2">
       <h2 className="question-2__header">
@@ -66,7 +68,6 @@ function SignUp2() {
             onChange={handleCheckboxChange}
           />
         </label>
-        
 
         <label className="question-2__box">
           <p className="question-2__input">I've Lifted Before</p>{" "}
@@ -81,7 +82,6 @@ function SignUp2() {
             onChange={handleCheckboxChange}
           />
         </label>
-        
 
         <label className="question-2__box">
           <p className="question-2__input">I'm Advanced</p>
@@ -96,12 +96,16 @@ function SignUp2() {
             onChange={handleCheckboxChange}
           />
         </label>
+
         
-        <Link to="SignUp3">
-          <button className="question-2__button" type="submit">
+          <button
+            onSubmit={handleSubmit}
+            className="question-2__button"
+            type="submit"
+          >
             Next
           </button>
-        </Link>
+      
       </form>
     </div>
   );
