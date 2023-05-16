@@ -60,12 +60,13 @@ function SignUp3() {
       });
   };
   return (
-    <div>
-      <h2>How many days per week are you willing to workout?</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="question-3">
+      <h2 className="question-3__title">How many days per week are you willing to workout?</h2>
+      <form className="question-3__container" onSubmit={handleSubmit}>
+        <label className="question-3__label">
           1x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox1"
             checked={checkboxValues.checkbox1}
@@ -74,9 +75,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           2x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox2"
             checked={checkboxValues.checkbox2}
@@ -85,9 +87,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           3x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox3"
             checked={checkboxValues.checkbox3}
@@ -96,9 +99,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           4x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox4"
             checked={checkboxValues.checkbox4}
@@ -107,9 +111,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           5x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox5"
             checked={checkboxValues.checkbox5}
@@ -118,9 +123,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           6x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox6"
             checked={checkboxValues.checkbox6}
@@ -129,9 +135,10 @@ function SignUp3() {
         </label>
         <br />
 
-        <label>
+        <label className="question-3__label">
           7x a week
           <input
+            className="question-3__checkbox"
             type="checkbox"
             name="checkbox7"
             checked={checkboxValues.checkbox7}
@@ -140,11 +147,13 @@ function SignUp3() {
         </label>
         <br />
         <Link to="SignUp4">
-          <button type="submit">Submit</button>
+          <button className="question-3__button" type="submit">
+            Next
+          </button>
         </Link>
       </form>
     </div>
-  )
+  );
 }
 
 export default SignUp3;

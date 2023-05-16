@@ -1,6 +1,13 @@
 import "./Week1.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Day1 from "../Days/Day1";
+import Day2 from "../Days/Day2";
+import Day3 from "../Days/Day3";
+import Day4 from "../Days/Day4";
+import Day5 from "../Days/Day5";
+import Day6 from "../Days/Day6";
+import Day7 from "../Days/Day7";
 
 const options = {
   method: "GET",
@@ -12,7 +19,6 @@ const options = {
 };
 
 function Week1() {
-  const [exercises, setExercises] = useState([]);
   const [chestExercises, setChestExercises] = useState([]);
   const [deltsExercises, setDeltsExercises] = useState([]);
   const [tricepsExercises, setTricepsExercises] = useState([]);
@@ -23,6 +29,7 @@ function Week1() {
   const [quadsExercises, setQuadsExercises] = useState([]);
   const [calvesExercises, setCalvesExercises] = useState([]);
   const [cardioExercises, setCardioExercises] = useState([]);
+  const weekSchema = "3 sets by 12-15 reps";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,23 +39,25 @@ function Week1() {
 
         //get chest workouts
         const chestExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "chest"
+          (exercise) => exercise.target === "pectorals"
         );
 
         const randomChestExercises = getRandomExercises(chestExercises, 4);
         setChestExercises(randomChestExercises);
 
+
         //get delts workouts
         const deltsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "delts"
+          (exercise) => exercise.target === "delts"
         );
 
         const randomDeltsExercises = getRandomExercises(deltsExercises, 4);
         setDeltsExercises(randomDeltsExercises);
 
+
         //get triceps workouts
         const tricepsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "triceps"
+          (exercise) => exercise.target === "triceps"
         );
 
         const randomTricepsExercises = getRandomExercises(tricepsExercises, 4);
@@ -56,15 +65,16 @@ function Week1() {
 
         // get lats workouts
         const latsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "lats"
+          (exercise) => exercise.target === "lats"
         );
 
         const randomLatsExercises = getRandomExercises(latsExercises, 4);
         setLatsExercises(randomLatsExercises);
 
+
         //get upper back workouts
         const upperBackExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "upper back"
+          (exercise) => exercise.target === "upper back"
         );
 
         const randomUpperBackExercises = getRandomExercises(
@@ -75,7 +85,7 @@ function Week1() {
 
         //get biceps workouts
         const bicepsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "biceps"
+          (exercise) => exercise.target === "biceps"
         );
 
         const randomBicepsExercises = getRandomExercises(bicepsExercises, 4);
@@ -83,7 +93,7 @@ function Week1() {
 
         //get hamstrings workouts
         const hamstringsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "hamstrings"
+          (exercise) => exercise.target === "hamstrings"
         );
 
         const randomHamstringsExercises = getRandomExercises(
@@ -92,9 +102,10 @@ function Week1() {
         );
         setHamstringsExercises(randomHamstringsExercises);
 
+
         //get quad workouts
         const quadsExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "quads"
+          (exercise) => exercise.target === "quads"
         );
 
         const randomQuadsExercises = getRandomExercises(quadsExercises, 4);
@@ -102,7 +113,7 @@ function Week1() {
 
         //get calves workouts
         const calvesExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "calves"
+          (exercise) => exercise.target === "calves"
         );
 
         const randomCalvesExercises = getRandomExercises(calvesExercises, 4);
@@ -110,15 +121,11 @@ function Week1() {
 
         //get cardio workouts
         const cardioExercises = exercises.filter(
-          (exercise) => exercise.bodyPart === "cardiovascular system"
+          (exercise) => exercise.target === "cardiovascular system"
         );
 
         const randomCardioExercises = getRandomExercises(cardioExercises, 4);
         setCardioExercises(randomCardioExercises);
-
-        const randomExercises = getRandomExercises(exercises, 10);
-        setExercises(randomExercises);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -132,90 +139,48 @@ function Week1() {
     return shuffledExercises.slice(0, count);
   };
   return (
-    <div>
-      <article>
-        <h2>Day 1</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-        {chestExercises.map((exercise) => (
-          <div key={exercise.id}>
-            <img src={exercise.gifUrl} alt="animation"></img>
-            <p>{exercise.name}</p> <p>{exercise.bodyPart}</p>{" "}
-          </div>
-        ))}
-        <div>
-          {deltsExercises.map((exercise) => (
-            <div key={exercise.id}>
-              <img src={exercise.gifUrl} alt="animation"></img>
-              {exercise.name} {exercise.bodyPart}{" "}
-            </div>
-          ))}
-        </div>
-        {tricepsExercises.map((exercise) => (
-          <div key={exercise.id}>
-            <img src={exercise.gifUrl} alt="animation"></img>
-            {exercise.name} {exercise.bodyPart}{" "}
-          </div>
-        ))}
-      </article>
-      <article>
-        <h2>Day 2</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
-      <article>
-        <h2>Day 3</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
-      <article>
-        <h2>Day 4</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
-      <article>
-        <h2>Day 5</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
-      <article>
-        <h2>Day 6</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
-      <article>
-        <h2>Day 7</h2>
-        <div>
-          <h3>Exercise</h3>
-          <h3>Sets</h3>
-          <h3>Reps</h3>
-          <h3>Target Muscle</h3>
-        </div>
-      </article>
+    <div className="week-1">
+      <Day1
+        chestExercises={chestExercises}
+        deltsExercises={deltsExercises}
+        tricepsExercises={tricepsExercises}
+        weekSchema={weekSchema}
+      />
+      <Day2
+        upperBackExercises={upperBackExercises}
+        latsExercises={latsExercises}
+        bicepsExercises={bicepsExercises}
+        weekSchema={weekSchema}
+      />
+      <Day3
+        quadsExercises={quadsExercises}
+        hamstringsExercises={hamstringsExercises}
+        calvesExercises={calvesExercises}
+        weekSchema={weekSchema}
+      />
+      <Day4
+        chestExercises={chestExercises}
+        deltsExercises={deltsExercises}
+        tricepsExercises={tricepsExercises}
+        weekSchema={weekSchema}
+      />
+      <Day5
+        upperBackExercises={upperBackExercises}
+        latsExercises={latsExercises}
+        bicepsExercises={bicepsExercises}
+        weekSchema={weekSchema}
+      />
+
+      <Day6
+        quadsExercises={quadsExercises}
+        hamstringsExercises={hamstringsExercises}
+        calvesExercises={calvesExercises}
+        weekSchema={weekSchema}
+      />
+      <Day7
+      cardioExercises={cardioExercises}
+      weekSchema={weekSchema}
+      />
     </div>
   );
 }

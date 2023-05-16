@@ -48,43 +48,59 @@ function SignUp2() {
       });
   };
   return (
-    <div>
-      <h2>How experienced are you lifting weights?</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          I'm New to it I'm new or have only tried it for a bit.
+    <div className="question-2">
+      <h2 className="question-2__header">
+        How experienced are you lifting weights?
+      </h2>
+      <form className="question-2__container" onSubmit={handleSubmit}>
+        <label className="question-2__box">
+          <p className="question-2__input">I'm New to it</p>
+          <p className="question-2__input--small">
+            I'm new or have only tried it for a bit.
+          </p>
           <input
+            className="question-2__checkbox"
             type="checkbox"
             name="checkbox1"
             checked={checkboxValues.checkbox1}
             onChange={handleCheckboxChange}
           />
         </label>
-        <br />
+        
 
-        <label>
-         I've Lifted Before Ive lifted weights before but never stuck to a balanced routine.
+        <label className="question-2__box">
+          <p className="question-2__input">I've Lifted Before</p>{" "}
+          <p className="question-2__input--small">
+            Ive lifted weights before but never stuck to a balanced routine.
+          </p>
           <input
+            className="question-2__checkbox"
             type="checkbox"
             name="checkbox2"
             checked={checkboxValues.checkbox2}
             onChange={handleCheckboxChange}
           />
         </label>
-        <br />
+        
 
-        <label>
-          I'm Advanced Ive stuck to a balanced routine for years
+        <label className="question-2__box">
+          <p className="question-2__input">I'm Advanced</p>
+          <p className="question-2__input--small">
+            Ive stuck to a balanced routine for years
+          </p>
           <input
+            className="question-2__checkbox"
             type="checkbox"
             name="checkbox3"
             checked={checkboxValues.checkbox3}
             onChange={handleCheckboxChange}
           />
         </label>
-        <br />
+        
         <Link to="SignUp3">
-          <button type="submit">Next</button>
+          <button className="question-2__button" type="submit">
+            Next
+          </button>
         </Link>
       </form>
     </div>

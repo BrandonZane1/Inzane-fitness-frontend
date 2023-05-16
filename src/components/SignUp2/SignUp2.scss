@@ -1,0 +1,66 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.question-2 {
+  padding: 5%;
+  background-color: $page-background;
+  color: $primary-text;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: $comments 1px solid;
+    padding: 1rem 0;
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0;
+
+    &--small {
+      @include mComment;
+      width: 90%;
+    }
+  }
+
+  &__button {
+    @include mNextButton;
+    font-weight: 600;
+    margin: 0 auto;
+  }
+
+  &__checkbox {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    &:checked {
+        background-color: $interactive;
+    }
+}
+
+
+  }
+

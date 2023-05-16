@@ -73,12 +73,15 @@ function SignUp4() {
       {isLoading ? (
         <div>Unleash the BEAST</div>
       ) : (
-        <div>
-          <h2>What equipment do you have access to?</h2>
-          <form onSubmit={handleSubmit}>
-            <label>
+        <div className="question-4">
+          <h2 className="question-4__title">
+            What equipment do you have access to?
+          </h2>
+          <form className="question-4__container" onSubmit={handleSubmit}>
+            <label className="question-4__label">
               Full Gym
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox1"
                 checked={checkboxValues.checkbox1}
@@ -87,9 +90,10 @@ function SignUp4() {
             </label>
             <br />
 
-            <label>
+            <label className="question-4__label">
               Barbells
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox2"
                 checked={checkboxValues.checkbox2}
@@ -98,9 +102,10 @@ function SignUp4() {
             </label>
             <br />
 
-            <label>
+            <label className="question-4__label">
               Dumbbells
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox3"
                 checked={checkboxValues.checkbox3}
@@ -109,9 +114,10 @@ function SignUp4() {
             </label>
             <br />
 
-            <label>
+            <label className="question-4__label">
               KettleBells
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox4"
                 checked={checkboxValues.checkbox4}
@@ -120,9 +126,10 @@ function SignUp4() {
             </label>
             <br />
 
-            <label>
+            <label className="question-4__label">
               Machines
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox5"
                 checked={checkboxValues.checkbox5}
@@ -131,9 +138,10 @@ function SignUp4() {
             </label>
             <br />
 
-            <label>
+            <label className="question-4__label">
               No Equipment
               <input
+                className="question-4__checkbox"
                 type="checkbox"
                 name="checkbox6"
                 checked={checkboxValues.checkbox6}
@@ -143,7 +151,7 @@ function SignUp4() {
             <br />
 
             <Link to="/Workouts">
-              <button type="submit">Submit</button>
+              <button className="question-4__button" type="submit">Submit</button>
             </Link>
           </form>
         </div>

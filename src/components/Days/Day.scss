@@ -8,7 +8,7 @@
     color: $primary-text;
     
     &__title {
-        @include mSubHeader;
+        @include mNextButton;
     }
 }
 

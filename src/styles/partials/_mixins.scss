@@ -29,6 +29,15 @@
   font-weight: 200;
 }
 
+@mixin mWorkoutName {
+  font-size: 1rem;
+}
+
+@mixin mTargetMuscle {
+  color: $muscle;
+  font-weight: 600;
+}
+
 @mixin mComment {
   font-size: 0.8rem;
   color: $comments;
@@ -48,7 +57,7 @@
   border: $interactive;
   padding: 1rem;
   color: $primary-text;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 1rem;
   font-size: 1rem;
