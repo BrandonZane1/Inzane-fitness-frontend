@@ -103,6 +103,8 @@ Things you need to use in the software and how to install them.
    ```js
    npm start
    ```
+5. Being a mobile application please shift the project to mobile view preferably under 460px                                       
+                                       
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
