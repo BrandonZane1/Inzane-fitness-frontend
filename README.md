@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# Inzane-fitness-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[![LinkedIn][linkedin-shield]][[linkedin-url](https://www.linkedin.com/in/brandonzane273/)]
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Train InZane or Remain the Same
+<br />
+<div align="center">
+  <a href="https://github.com/github_BrandonZane1/Inzane-fitness-frontend">
+    <h1 font-family="impact width="80" height="80">
+  </a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3 align="center">InZane Fitness</h3>
 
-### `npm test`
+  <p align="center">
+    A personlized fitness trainer In the palm of your hand
+    <br />
+    <a href="https://github.com/github_BrandonZane1/Inzane-fitness-frontend"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_BrandonZane1/Inzane-fitness-frontend">View Demo</a>
+  </p>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+InZane Fitness
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+InZane Fitness is mobile application designed to be a personal fitness trainer in the palm of your hand. By answering a few questions, the fitness application can design a personalized 4 week, repeatable training program based off the users skill level, equipment available, and time availibilty per week.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* React.js
+* Sass
+* MongoDB
+* Express
+* Node.js                                       
+* Mongoose 
+* Nodemon                                       
+                                       
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Prerequisites
 
-### Making a Progressive Web App
+Things you need to use in the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+1. Get a free API Key at [https://https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/) or use the current key in the repo
+2. Clone the repo
+   ```sh
+   git clone https://github.com//github_BrandonZane1/Inzane-fitness-backend.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start your server`
+   ```js
+   npm start
+   ```
+5. Being a mobile application please shift the project to mobile view preferably under 460px                                       
+                                       
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+<!-- USAGE EXAMPLES -->
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project can be used in every day life. Personally, I have never had a trainer or anyone to teach me about fitness, I am mostly self taught from youtube and other research. Having an application that will generate a workout plan for you, set up a rep and set scheme, and give you a visual on how to perform the exercise is a tool that anyone can use! Whether youre just getting started, or a hardened vet, the workout database is so vast it can help any user.
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Brandon Zane - bzane001@fiu.edu
+
+Project Link: (https://github.com/github_BrandonZane1/Inzane-fitness-frontend)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* The BrainStation Team on guiding on kickstarting my learning and more importantly teaching me how to adapt
+* My fellow classmates for always being there to support
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
