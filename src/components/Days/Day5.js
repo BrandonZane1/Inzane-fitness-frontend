@@ -21,6 +21,10 @@ function Day5({
 
       {isDay5Visible && (
         <div>
+          <h3 className="quote">
+            Pull Day! Back and Biceps, try supersetting a pair of workouts for
+            shorter workout times and more burn!
+          </h3>
           {latsExercises.map((exercise) => (
             <div className="card" key={exercise.id}>
               <img

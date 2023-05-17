@@ -24,14 +24,13 @@
 
   &__label {
     width: 100%;
-    display:flex ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: $comments 1px solid;
     padding: 1rem 0;
-    
   }
-  
+
   &__checkbox {
     width: 1.3em;
     height: 1.3em;
@@ -45,9 +44,9 @@
     cursor: pointer;
 
     &:checked {
-        background-color: $interactive;
+      background-color: $interactive;
     }
-}
+  }
 
   &__button {
     @include mButtons;

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "./Day.scss";
 
-function Day2( {latsExercises, upperBackExercises, bicepsExercises, weekSchema}) {
+function Day2({
+  latsExercises,
+  upperBackExercises,
+  bicepsExercises,
+  weekSchema,
+}) {
   const [isDay2Visible, setIsDay2Visible] = useState(false);
 
   const toggleDay2Visibility = () => {
@@ -10,13 +15,16 @@ function Day2( {latsExercises, upperBackExercises, bicepsExercises, weekSchema})
 
   return (
     <article className="day">
-      
-        <button className="day__title" onClick={toggleDay2Visibility}>
-          {isDay2Visible ? "Hide" : "Day 2"}
-        </button>
+      <button className="day__title" onClick={toggleDay2Visibility}>
+        {isDay2Visible ? "Hide" : "Day 2"}
+      </button>
 
       {isDay2Visible && (
         <div>
+          <h3 className="quote">
+            Pull Day! Back and Biceps, try supersetting a pair of workouts for
+            shorter workout times and more burn!
+          </h3>
           {latsExercises.map((exercise) => (
             <div className="card" key={exercise.id}>
               <img

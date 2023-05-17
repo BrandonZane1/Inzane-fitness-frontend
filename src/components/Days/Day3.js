@@ -21,6 +21,10 @@ function Day3({
 
       {isDay3Visible && (
         <div>
+          <h3 className="quote">
+            Leg Day! Hamstrings Quads and Calves, try supersetting a pair of
+            workouts for shorter workout times and more burn!
+          </h3>
           {quadsExercises.map((exercise) => (
             <div className="card" key={exercise.id}>
               <img

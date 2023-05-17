@@ -4,4 +4,8 @@
 
 .footer {
     background-color: $page-background;
+    color: $primary-text;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
 }

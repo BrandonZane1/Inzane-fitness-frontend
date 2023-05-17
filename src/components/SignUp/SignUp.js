@@ -17,7 +17,9 @@ function SignUp() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/form1", { firstName });
+      const response = await axios.post("http://localhost:5000/api/form1", {
+        firstName,
+      });
 
       console.log("Form data saved successfully.");
       // Perform any necessary actions after successful form submission

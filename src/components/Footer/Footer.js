@@ -3,7 +3,7 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className='footer'>
-    Hi
+    ⒸInZane Fitness All rights Reserved
     </div>
   );
 }

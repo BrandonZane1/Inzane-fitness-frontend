@@ -16,7 +16,7 @@ function SurveyPage() {
         <Route path="/SignUp2" element={<SignUp2 />} />
         <Route path="/SignUp3" element={<SignUp3 />} />
         <Route path="/SignUp4" element={<SignUp4 />} />
-        <Route path="/Workouts" element={<WorkoutsPage/>}/>
+        <Route path="/Workouts" element={<WorkoutsPage />} />
       </Routes>
     </div>
   );

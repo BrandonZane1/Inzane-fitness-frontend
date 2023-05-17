@@ -16,6 +16,10 @@ function Day7({ cardioExercises, weekSchema }) {
 
       {isDay7Visible && (
         <div>
+          <h3 className="quote">
+            Cardio Day! Get your sweat in but go easy on the weights, got a full
+            week ahead of you!
+          </h3>
           {cardioExercises.map((exercise) => (
             <div className="card" key={exercise.id}>
               <img

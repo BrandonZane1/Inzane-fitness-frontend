@@ -44,8 +44,6 @@ function Week2() {
       const lastIndex = formData3.length - 1;
       const lastElement = formData3[lastIndex];
 
-      console.log(lastElement);
-
       const checkboxValueWithString = Object.entries(lastElement).find(
         ([key, value]) =>
           key !== "_id" && typeof value === "string" && isNaN(value)
@@ -55,13 +53,7 @@ function Week2() {
         ? checkboxValueWithString[1]
         : null;
 
-        
       setDesiredEquipment(desiredEquipment);
-      console.log("Value with non-numeric string value:", desiredEquipment);
-      // const values = Object.values(lastElement);
-      // const selectedValue = values.find((value) => value !== 0);
-
-      // console.log(selectedValue)
     } catch (error) {
       console.error("Error fetching Form3 data:", error);
     }
@@ -91,7 +83,6 @@ function Week2() {
     }
   };
 
-  console.log(desiredEquipment);
   useEffect(() => {
     fetchAllForm2Data();
   }, []);
@@ -106,11 +97,10 @@ function Week2() {
         const chestExercises = exercises.filter((exercise) => {
           return (
             exercise.target === "pectorals" &&
-            (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
           );
         });
-
-        console.log(desiredEquipment);
 
         const randomChestExercises = getRandomExercises(chestExercises, 4);
         setChestExercises(randomChestExercises);
@@ -119,7 +109,8 @@ function Week2() {
         const deltsExercises = exercises.filter(
           (exercise) =>
             exercise.target === "delts" &&
-            (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomDeltsExercises = getRandomExercises(deltsExercises, 4);
@@ -129,7 +120,8 @@ function Week2() {
         const tricepsExercises = exercises.filter(
           (exercise) =>
             exercise.target === "triceps" &&
-            (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomTricepsExercises = getRandomExercises(tricepsExercises, 4);
@@ -137,10 +129,10 @@ function Week2() {
 
         // get lats workouts
         const latsExercises = exercises.filter(
-          (exercise) => exercise.target === "lats" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
-          
-          
+          (exercise) =>
+            exercise.target === "lats" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomLatsExercises = getRandomExercises(latsExercises, 4);
@@ -148,8 +140,10 @@ function Week2() {
 
         //get upper back workouts
         const upperBackExercises = exercises.filter(
-          (exercise) => exercise.target === "upper back" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "upper back" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomUpperBackExercises = getRandomExercises(
@@ -160,8 +154,10 @@ function Week2() {
 
         //get biceps workouts
         const bicepsExercises = exercises.filter(
-          (exercise) => exercise.target === "biceps" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "biceps" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomBicepsExercises = getRandomExercises(bicepsExercises, 4);
@@ -169,8 +165,10 @@ function Week2() {
 
         //get hamstrings workouts
         const hamstringsExercises = exercises.filter(
-          (exercise) => exercise.target === "hamstrings" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "hamstrings" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomHamstringsExercises = getRandomExercises(
@@ -181,8 +179,10 @@ function Week2() {
 
         //get quad workouts
         const quadsExercises = exercises.filter(
-          (exercise) => exercise.target === "quads" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "quads" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomQuadsExercises = getRandomExercises(quadsExercises, 4);
@@ -190,8 +190,10 @@ function Week2() {
 
         //get calves workouts
         const calvesExercises = exercises.filter(
-          (exercise) => exercise.target === "calves" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "calves" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomCalvesExercises = getRandomExercises(calvesExercises, 4);
@@ -199,8 +201,10 @@ function Week2() {
 
         //get cardio workouts
         const cardioExercises = exercises.filter(
-          (exercise) => exercise.target === "cardiovascular system" &&
-          (desiredEquipment === "all" || exercise.equipment === desiredEquipment)
+          (exercise) =>
+            exercise.target === "cardiovascular system" &&
+            (desiredEquipment === "all" ||
+              exercise.equipment === desiredEquipment)
         );
 
         const randomCardioExercises = getRandomExercises(cardioExercises, 4);
@@ -219,6 +223,10 @@ function Week2() {
   };
   return (
     <div className="week-1">
+      <h3 className="week-1__quote">
+        {" "}
+        Week two! Complacency Crumbles Empires!
+      </h3>
       {numDays >= 1 && (
         <Day1
           chestExercises={chestExercises}

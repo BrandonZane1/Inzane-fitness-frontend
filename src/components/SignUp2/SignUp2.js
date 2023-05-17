@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./SignUp2.scss";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function SignUp2() {
   const [checkboxValues, setCheckboxValues] = useState({
@@ -9,7 +8,7 @@ function SignUp2() {
     checkbox2: false,
     checkbox3: false,
   });
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleCheckboxChange = (event) => {
     const { name } = event.target;
 
@@ -29,8 +28,8 @@ const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Checkbox values:", checkboxValues);
-    navigate('/SignUp3');
-  }
+    navigate("/SignUp3");
+  };
 
   //   const formData = {
   //     checkbox1: checkboxValues.checkbox1,
@@ -97,15 +96,13 @@ const navigate = useNavigate();
           />
         </label>
 
-        
-          <button
-            onSubmit={handleSubmit}
-            className="question-2__button"
-            type="submit"
-          >
-            Next
-          </button>
-      
+        <button
+          onSubmit={handleSubmit}
+          className="question-2__button"
+          type="submit"
+        >
+          Next
+        </button>
       </form>
     </div>
   );

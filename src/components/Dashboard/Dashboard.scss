@@ -5,7 +5,7 @@
 .dashboard {
   background-color: $page-background;
   @include mContainer;
-  height: 85vh;
+  height: 80vh;
 
   &__header {
     gap: 1rem;

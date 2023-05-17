@@ -3,30 +3,33 @@
 @use "../../styles/partials/global" as *;
 
 .nav {
-    background-color: $page-background;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    height: 85vh;
-    // justify-content: center;
+  background-color: $page-background;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 85vh;
+  // justify-content: center;
 
-    &__title {
-        color: $primary-text;
-        @include mOther;
-        @include mSubHeader;
-        text-align: center;
-        padding-top: 2rem;
-    }
-   
+  &__title {
+    color: $primary-text;
+    @include mOther;
+    @include mSubHeader;
+    text-align: center;
+    padding-top: 2rem;
+  }
 
-    &__week {
-        text-decoration: none; 
-        color: $primary-text;
-        @include mNextButton;
-        @include mButtons;
-        text-align: center;
-        width: 90%;
+  &__comment {
+    @include mComment;
+    padding: 5%;
+    text-align: center;
+  }
 
-
-    }
+  &__week {
+    text-decoration: none;
+    color: $primary-text;
+    @include mNextButton;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 90%;
+  }
 }

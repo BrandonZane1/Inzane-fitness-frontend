@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./SignUp4.scss";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function SignUp4() {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,17 +41,16 @@ function SignUp4() {
     if (isLoading) {
       setTimeout(() => {
         setIsLoading(false);
-        navigate('/Workouts'); // Trigger navigation after displayTime
+        navigate("/Workouts"); // Trigger navigation after displayTime
       }, displayTime);
     }
   }, [isLoading, displayTime, navigate]);
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Checkbox values:", checkboxValues);
     setIsLoading(true);
-    
+
     const formData = {
       checkbox1: checkboxValues.checkbox1,
       checkbox2: checkboxValues.checkbox2,
@@ -68,13 +67,11 @@ function SignUp4() {
         console.log("Form data posted successfully");
         // Reset the form if needed
         setDisplayTime(4000);
-        
       })
       .catch((error) => {
         console.error("Failed to post form data", error);
         // Handle error
-      })
-    
+      });
   };
   return (
     <div>
@@ -158,9 +155,9 @@ function SignUp4() {
             </label>
             <br />
 
-            
-              <button className="question-4__button" type="submit">Submit</button>
-            
+            <button className="question-4__button" type="submit">
+              Submit
+            </button>
           </form>
         </div>
       )}

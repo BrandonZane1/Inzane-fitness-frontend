@@ -21,6 +21,10 @@ function Day4({
 
       {isDay4Visible && (
         <div>
+          <h3 className="quote">
+            Push Day! Chest Shoulders and triceps, try supersetting a pair of
+            workouts for shorter workout times and more burn!
+          </h3>
           {chestExercises.map((exercise) => (
             <div className="card" key={exercise.id}>
               <img
